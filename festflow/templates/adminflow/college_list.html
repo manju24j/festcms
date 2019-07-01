@@ -1,0 +1,55 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+{% block title %} ABOUT US {% endblock %}
+
+{% block extra_head %}
+
+<!-- View CSS -->
+<link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'/>
+
+{% endblock %}
+
+{% block body_contents %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h3> College Details </h3>
+        <div class="dash"></div>
+        <br /> 
+
+        <ul class="object-tools"> 
+        <li> 
+            <a href="/addcollegelist" class="btn btn-info" role="button">Add College List + 
+
+        </br></a> 
+
+            </br> <table class="table table-hover" >
+            	<thead>
+            		<tr>
+            			<th scope="col">College Name</th>
+      					<th scope="col"> Place</th>
+      
+  				</thead>
+  				<tbody>
+    				<tr>
+      					<th scope="row">1</th>
+      
+    				</tr>
+    
+    
+  				</tbody>
+			</table>
+		</li> 
+	</ul>
+            
+
+
+
+        
+
+    </div>
+</div>
+
+
+{% endblock %}

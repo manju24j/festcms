@@ -1,0 +1,35 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+{% block title %} ABOUT US {% endblock %}
+
+{% block extra_head %}
+
+<!-- View CSS -->
+<link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'/>
+
+{% endblock %}
+
+{% block body_contents %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h3 id='link'>Organizer</h3>
+        <div class="dash"></div>
+        <br />
+        <ul class="object-tools"> 
+        <li> 
+            <a href="/addorganizer" class="btn btn-info" role="button">Add Organizer + </a>
+
+            </li> </ul>
+            
+
+
+
+        
+
+    </div>
+</div>
+
+
+{% endblock %}

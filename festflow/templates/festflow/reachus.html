@@ -1,0 +1,62 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+{% block title %} REACH US {% endblock %}
+
+{% block extra_head %}
+
+<!-- View CSS -->
+<link rel="stylesheet" type="text/css" href='{% static "css/other.css" %}'/>
+
+{% endblock %}
+
+{% block body_contents %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 id='link'>Reach Us</h1>
+        <div class="dash"></div>
+        <br />
+        <br />
+        <div class="address">
+            KLE Institute of Technology,
+            <br />
+            opposite Airport, Gokul, 
+            <br />
+            Hubli - 580030.
+            <br />
+            Event Organizer:
+            <br/>
+            Mobile : +91-9999999999
+            <br/>
+            Phone : 0836 - 222222
+            <br />
+        </div>
+        <div id="map"></div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extrajs %}
+
+<script>
+    function initMap() {
+        // Add latitude and longitude of the college
+        var college = {lat: 15.351968, lng: 75.082094};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: college
+        });
+        var marker = new google.maps.Marker({
+            position: college,
+            map: map
+        });
+    }
+</script>
+<!-- apikey=AIzaSyBeeiBUpWesKztw0bIwuQ6YJBTqcecVbDk -->
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key={{ google_api_key }}&callback=initMap">
+</script>
+
+{% endblock %}

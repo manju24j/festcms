@@ -1,0 +1,65 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+
+{% block body_contents %}
+   <div id="container">
+    	<h2>Add Organizers </h2>
+        <form>
+            
+            
+                <div class="col-xs-3" >
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" id="name">
+                
+               
+                    <label for="position">Position:</label>
+                    <input type="position" class="form-control" id="position">
+                
+                
+                    <label for="contactnumber">Contact Number:</label>
+                    <input type="contactnumber" class="form-control" id="contactnumber" maxlength="10">
+               
+                 
+                <label for="rank">Rank:</label>
+
+                <input type="number" name="rank" value="0" class="form-control" required="" id="id_rank">
+                
+                <label for="email">Email Id:</label>
+                <input type="email" name="emailId" class="form-control" maxlength="254" id="id_emailId">
+                 <label for="img">Image Upload:</label>
+                  <input type="file" name="img" id="img">
+
+                </br>
+                <button type="button" class="btn btn-primary">Save</button> 
+                </div></br>               
+                 
+            </form>
+            
+                
+
+
+
+
+
+
+
+                
+
+
+
+        </form>
+    	
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

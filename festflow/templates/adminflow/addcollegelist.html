@@ -1,0 +1,47 @@
+{% extends "adminflow/base.html" %}
+{% load static %}
+
+
+{% block body_contents %}
+       
+<div class="container">
+    <div class="jumbotron">
+        <h3>ADD College List </h3>
+        
+         <form class="form-item span8" id="item_form" method="post"
+             action="/admin/add_college/" enctype="multipart/form-data">
+            {% csrf_token %}          
+            
+            <table>
+                <tr>
+                    <td>
+                    <label for="colname">College Name:</label>
+                    </td>
+                    <td>
+                    <input type="colname" class="form-control" id="colname">    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="palce">Place:</label>                        
+                    </td>
+                    <td>
+                    <input type="text" class="form-control" id="palce">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    <button type="button" class="btn btn-primary">Save</button> 
+                    </td>
+                </tr>
+            </table>
+                 
+            </form>
+        </div>
+    </div>
+{% endblock %}

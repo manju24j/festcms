@@ -1,0 +1,64 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+{% block title %} ABOUT US {% endblock %}
+
+{% block extra_head %}
+
+<!-- View CSS -->
+<link rel="stylesheet" type="text/css" href='{% static "css/about.css" %}'/>
+
+{% endblock %}
+
+{% block body_contents %}
+
+<div class="container">
+    <div class="jumbotron">
+        <h3>FAQs</h3>
+        
+        <div class="dash"></div>
+        <br />
+        <ul class="object-tools"> 
+        <li> 
+            <a href="/addfaq" class="btn btn-info" role="button">Add FAQs + </a> </br>
+
+
+            <table class="table table-hover" >
+                <thead>
+                    <tr>
+                        <th scope="col">Identifier</th>
+                        <th scope="col"> Question</th>
+                         <th scope="col">Answer</th>
+                        
+
+      
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <th scope="row">hfkjfl</th>
+                        <th scope="row">hfkjfl</th>
+
+      
+      
+                    </tr>
+                    
+    
+                </tbody>
+            </table>
+           
+
+
+
+            </li> </ul>
+            
+
+
+
+        
+
+    </div>
+</div>
+
+
+{% endblock %}

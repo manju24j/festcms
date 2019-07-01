@@ -1,0 +1,105 @@
+{% extends "adminflow/base.html" %}
+{% load static %}
+
+
+{% block body_contents %}
+<div class="container">
+    <div class="jumbotron">
+
+    	<h2>Add Event </h2>
+
+         <form class="form-item span8" id="item_form" method="post"
+             action="/admin/add_event/" enctype="multipart/form-data">
+
+            {% csrf_token %}          
+            
+            
+                <div class="col-xs-3" >
+
+                    <label for="identifier">Identifier:</label>
+                    <input type="identifier" class="form-control" id="identifier">
+
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" id="name">
+
+                    <label for="description">Description:</label>
+                    <textarea name="description" cols="40" rows="5" class="form-control" required="" id="id_description"></textarea> </br>
+
+                    <label for="logo">Logo:</label>
+                    <input type="file" name="logo" id="logo">
+
+                    <label for="logo">Problem Statement:</label>
+                    <input type="file" name="logo" id="logo">
+
+                    <label for="fee">Fee:</label>
+                    <input type="fee" class="form-control" id="fee">
+
+                    <label for="venue">venue:</label>
+                    <input type="venue" class="form-control" id="venue">
+
+                    <label for="venue_lat">Venue Lat:</label>
+                    <input type="number" name="venue_lat" value="0" class="form-control" required="" id="id_venue_lat">
+                
+                    <label for="venue_long">Venue Long:</label>
+
+                    <input type="number" name="venue_long" value="0" class="form-control" required="" id="id_venue_long">
+
+
+                    <div class="form-row field-date_time">
+            
+            
+                <div>
+                    
+                    
+                        <label class="required" for="id_date_time_0">Date time:</label>
+                        
+                            <p class="datetime">
+                             Date: <input type="text" name="date_time_0" class="vDateField" size="10" required="" id="id_date_time_0"><span class="datetimeshortcuts">&nbsp;<a href="#">Today</a>&nbsp;|&nbsp;
+                                <a href="#" id="calendarlink0"><span class="date-icon" title="Choose a Date"></span></a></span>
+                                <br>
+                                Time: <input type="text" name="date_time_1" class="vTimeField" size="8" required="" id="id_date_time_1"><span class="datetimeshortcuts">&nbsp;
+                                <a href="#">Now</a>&nbsp;|&nbsp;<a href="#" id="clocklink0"><span class="clock-icon" title="Choose a Time"></span></a></span>
+
+
+<br><span class="timezonewarning">Note: You are 5.5 hours ahead of server time.</span></p>
+                        
+                    
+                    
+                </div>
+            
+        </div>
+                
+                    
+                    </br>
+                    <button type="button" class="btn btn-primary">Save</button> 
+                </div>
+            </br>              
+
+            
+                
+
+
+
+
+
+
+
+                
+
+
+
+        </form>
+    	
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+{% endblock %}

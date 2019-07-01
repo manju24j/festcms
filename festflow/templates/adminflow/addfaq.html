@@ -1,0 +1,39 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+
+{% block body_contents %}
+   
+    
+    
+    <div id="container">
+        <h2>FAQs </h2>
+        
+
+
+        <form>
+            
+                <div class="col-xs-4" >
+                    <label for="identifier">Identifier:</label>
+                    <input type="identifier" class="form-control" id="identifier">
+                
+               
+                    <label for="question">Question:</label>
+                    <textarea name="question" cols="40" rows="5" class="form-control" required="" id="id_question"></textarea>
+
+                    <label for="answer">Answer:</label>
+                    <textarea name="answer" cols="40" rows="5" class="form-control" required="" id="id_question"></textarea> </br>
+                
+                
+                
+                
+                    
+                 
+                
+                <button type="button" class="btn btn-primary">Save</button> 
+                </div></br>               
+                 
+            </form>
+        </div>
+    </div>
+{% endblock %}
