@@ -95,6 +95,16 @@ class Keynote(models.Model):
         return '/keynote/%s/' % self.identifier
 
 
+class College(models.Model):
+    "Stores additional information about the user"
+    # profile informations:
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
 class Profile(models.Model):
     "Stores additional information about the user"
 
@@ -102,7 +112,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     # profile informations:
-    institute_name = models.CharField(max_length=255)
+    institute_name = models.ForeignKey(College,on_delete=models.CASCADE)
     degree_name = models.CharField(max_length=255)
     major_subject_name = models.CharField(max_length=255)
 
@@ -116,7 +126,6 @@ class Profile(models.Model):
 
     def get_absolute_url(self):
         return '/events/%s/' % self.user.username
-
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
@@ -234,10 +243,3 @@ class NavbarEntry(models.Model):
     
             
  
-class volunteerlogin(models.Model):
-    """docstring for volunteer"""
-    
-    
-
-    def __init__(self, arg):
-        return self.name

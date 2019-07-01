@@ -29,7 +29,7 @@ def admin_login(request):
             if user.is_active:
                 login(request, user)
                 if user.is_superuser:
-                    return HttpResponseRedirect('/adminhome/')
+                    return render(request, 'festflow/index.html')
             else:
                 return HttpResponse("Your rapido account is disabled.")
         else:
@@ -42,7 +42,7 @@ def admin_login(request):
 @login_required
 def admin_logout(request):
     logout(request)
-    return HttpResponseRedirect('/adminlogin/')
+    return HttpResponseRedirect('/index/')
 
 
 
@@ -101,6 +101,18 @@ def faq(request):
     context = {}
     context['faqs'] = FAQ.objects.all()
     return render(request, 'festflow/faq.html', context)
+
+def organizer(request):
+    context = {}
+    all_contacts = organizerMember.objects.all()
+    context['all_contacts'] = all_contacts
+    return render(request, 'festflow/contact.html', context)
+
+def collegelist(request):
+    context = {}
+    all_contacts = organizerMember.objects.all()
+    context['all_contacts'] = all_contacts
+    return render(request, 'festflow/contact.html', context)
 
 
 def login_page(request):

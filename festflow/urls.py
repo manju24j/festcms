@@ -32,9 +32,11 @@ urlpatterns = [
 
     # FAQ Page
     url(r'^faq/$', views.faq, name='FAQ'),
+    url(r'^organizer/$', views.organizer, name='organizer'),
 
     # Subscribe Page
     url(r'^subscribe/$', views.subscribe, name='subscribe'),
+
 
     # Event View Page
     url(r'^events/(?P<event_identifier>[a-z]*)/$',

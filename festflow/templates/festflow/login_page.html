@@ -56,21 +56,22 @@
             <br />
             <br />
             <div class="login-btn">
-                <a href="/login/facebook/?next=/">
-        <!--            <img id='fb-login' src='{% static "images/fb-login-btn.png" %}' class='img-responsive' alt='fb login' />
-                </a> -->
-
-                        <a href="/login/google-oauth2/?next=/">
+<!--                 <a href="/login/facebook/?next=/">
+                    <img id='fb-login' src='{% static "images/fb-login-btn.png" %}' class='img-responsive' alt='fb login' />
+                </a>
+ -->                <a href="/login/google-oauth2/?next=/">
                     <img id='google-login' src='{% static "images/google-login-btn.png" %}' class='img-responsive' alt='google login' />
                 </a>
             </div>
+        {% endif %}
 
+    </div>
+</div>
 
-<div class="login-box">
+<!-- <div class="login-box">
   <div class="login-logo">
     <a href="#"><b> Only for Admin to Fest Management</b></a>
   </div>
-  <!-- /.login-logo -->
   <div class="login-box-body">
 
     <form id="login_form" method="post" action="/adminlogin/">
@@ -89,16 +90,13 @@
           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <div class="col-md-4"></div>
-        <!-- /.col -->
       </div>
     </form>
   </div>
 </div>
-
-
-        {% endif %}
-
-    </div>
-</div>
+ -->
 
 {% endblock %}
+
+
+
