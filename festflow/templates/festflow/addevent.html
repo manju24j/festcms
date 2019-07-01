@@ -1,0 +1,86 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+
+{% block body_contents %}
+    
+<div class="container">
+    <div class="jumbotron">
+    	<h2>Add Event </h2>
+
+         <form class="form-inline" id="item_form" method="post"
+             action="/adminaddevent" enctype="multipart/form-data">
+
+            {% csrf_token %}
+            <table>
+                <tr>
+                 <td>
+                  <label for="identifier">Identifier:</label>
+                 </td>  
+                 <td> 
+                    <input name="identifier" type="identifier" class="form-control" id="identifier">
+                 </td>    
+                </tr>
+                <tr>
+                    <td>
+                    <label for="name">Name:</label>
+                    </td>
+                    <td>
+                    <input type="name" class="form-control" id="name">
+                    </td>                    
+                </tr>
+                <tr>
+                    <td>
+                    <label for="description">Description:</label>
+                    </td>
+                    <td>
+                    <textarea name="description" cols="40" rows="5" class="form-control" required="" id="id_description"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="logo">Logo:</label>
+                    </td>
+                    <td>
+                    <input type="file" name="logo" id="logo">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="logo">Problem Statement:</label>
+                    </td>
+                    <td>
+                    <input type="file" name="problemstatement" id="problem">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <label for="fee">Fee:</label>
+                    </td>
+                    <td>
+                    <input type="fee" name="fee" class="form-control" id="fee">
+                    </td>
+                </tr>
+                <tr>
+                    <td>                        
+                    <label for="venue">venue:</label>
+                    </td>
+                    <td>                        
+                    <input type="venue" name="venue" class="form-control" id="venue">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>                        
+                      <button class="btn btn-info mb-2 waves-effect waves-light">Save <i class="fas fa-send ml-1"></i></button>
+                    </td>
+
+                </tr>
+
+            </table> 
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

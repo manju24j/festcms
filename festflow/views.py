@@ -232,8 +232,17 @@ def adminabout(request):
 
 def adminaddabout(request):
     context = {}
-    context['content'] = About.objects.all()
-    return render(request, 'adminflow/addabout.html', context)
+    if request.method == 'POST':
+        identifier = request.POST['identifier']
+        content = request.POST['content']
+
+        c=About(identifier=identifier,content=content)
+        c.save()
+        context['content'] = About.objects.all()
+        return render(request, 'festflow/about.html', context)
+    else:
+        context['content'] = About.objects.all()
+        return render(request, 'festflow/addabout.html', context)
 
 def adminevent(request):
     context = {}
@@ -242,8 +251,25 @@ def adminevent(request):
 
 def adminaddevent(request):
     context = {}
-    context['content'] = About.objects.all()
-    return render(request, 'adminflow/event1.html', context)
+    context['content'] = Event.objects.all()
+    if request.method == 'POST':
+        identifier = request.POST['identifier']
+        name = request.POST['name']
+
+        description = request.POST['description']
+        logo = request.POST['logo']
+        venue = request.POST['venue']
+
+        c=About(identifier=identifier,content=content)
+        c.save()
+        all_events = Event.objects.all()
+        context['all_events'] = all_events
+        return render(request, 'festflow/event.html', context)
+    else:
+        all_events = Event.objects.all()
+        context['all_events'] = all_events
+        return render(request, 'festflow/addevent.html', context)
+
 
 def adminorganizer(request):
     context = {}

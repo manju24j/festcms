@@ -1,0 +1,39 @@
+{% extends "festflow/base.html" %}
+{% load static %}
+
+
+{% block body_contents %}
+   <div id="content" class="colM">
+        
+        <h1>Add sponsor</h1>
+        <div id="content-main">
+            <form>
+            
+            
+                <div class="col-xs-3" >
+                    <label for="name">Name:</label>
+                    <input type="name" class="form-control" id="name">
+                    <label for="logo">Logo:</label>
+                  <input type="file" name="logo" id="logo">
+                
+               
+                    
+                 
+                <label for="rank">Rank:</label>
+
+                <input type="number" name="rank" value="0" class="form-control" required="" id="id_rank">
+                
+                
+                 
+
+                </br>
+                <button type="button" class="btn btn-primary">Save</button> 
+                </div></br>               
+                 
+            </form>
+            
+                
+
+
+
+    {% endblock %}
