@@ -110,9 +110,9 @@ def organizer(request):
 
 def collegelist(request):
     context = {}
-    all_contacts = organizerMember.objects.all()
+    all_contacts = College.objects.all()
     context['all_contacts'] = all_contacts
-    return render(request, 'festflow/contact.html', context)
+    return render(request, 'festflow/college.html', context)
 
 
 def login_page(request):

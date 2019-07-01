@@ -30,6 +30,9 @@ urlpatterns = [
     # Reach Us Page
     url(r'^reachus/$', views.reachus, name='reachus'),
 
+    # Reach Us Page
+    url(r'^collegelist/$', views.collegelist, name='collegelist'),
+
     # FAQ Page
     url(r'^faq/$', views.faq, name='FAQ'),
     url(r'^organizer/$', views.organizer, name='organizer'),
