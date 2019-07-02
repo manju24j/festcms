@@ -15,10 +15,20 @@
 <div class="container">
     <div class="jumbotron">
         <h2 id='link'> College list </h2>
+
+              {% if user.is_authenticated %}
+               {% if user.username == 'admin' %}
+                    <h4>
+                        <a href="/adminaddcollegelist" class="btn btn-info" role="button">Add about + </a>
+                    </h4>
+               {% endif %}
+              {% endif %}
+
+
         <div class="dash"></div>
         <div class='row'>
 
-            {% for contact in all_contacts %}
+            {% for contact in all_colleges %}
             <div class='col-lg-3'>
                 <a href="{{contact.contactURL}}" target="_blank">
                     {% if contact.avatar_img %}
@@ -29,19 +39,19 @@
                 <table class="table ">
                     <tbody>
                         <tr>
-                            <td class='contact'><strong> {{ contact.name }}</strong></td>
+                            <td class='contact'><strong>Collge: {{ contact.name }}</strong></td>
                         </tr>
                         <tr>
                             <a href="tel:{{contact.contactNumber}}">
-                                <td class='contact'><strong> {{contact.contactNumber}}</strong></td>
+                                <td class='contact'><strong>Address: {{contact.address}}</strong></td>
                             </a>
                         </tr>
-                        <tr>
+<!--                         <tr>
                             <a href="mailto:{{contact.emailId}}">
                                 <td class='contact'><strong> {{contact.emailId}}</strong></td>
                             </a>
                         </tr>
-                    </tbody>
+ -->                    </tbody>
                 </table>
             </div>
             {% endfor %}

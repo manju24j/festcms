@@ -80,10 +80,6 @@ urlpatterns = [
 
     # organizer Page
     url(r'^adminorganizer/$', views.adminorganizer, name='organizer'),
-
-    # College List Page
-    url(r'^admincollege_list/$', views.admincollege_list, name='college_list'),
-
     
     # Add About Page
     url(r'^adminaddabout/$', views.adminaddabout, name='adminaddabout'),
@@ -98,7 +94,7 @@ urlpatterns = [
     url(r'^adminaddcollegelist/$', views.adminaddcollegelist, name='adminaddcollegelist'),
 
     # Add Sponsours Page
-    url(r'^adminaddsponsours/$', views.adminaddsponsours, name='adminaddsponsours'),
+    url(r'^adminaddsponsors/$', views.adminaddsponsors, name='adminaddsponsors'),
 
     # Add FAQ Page
     url(r'^adminaddfaq/$', views.adminaddfaq, name='adminaddfaq'),

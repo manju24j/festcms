@@ -4,36 +4,59 @@
 
 {% block body_contents %}
    
-    
-    
-    <div id="container">
-        <h2>FAQs </h2>
-        
 
+   <div class="container">
+    <div class="jumbotron">
 
-        <form>
-            
-                <div class="col-xs-4" >
-                    <label for="identifier">Identifier:</label>
-                    <input type="identifier" class="form-control" id="identifier">
-                
-               
+        <h1>Add About ssss</h1>
+
+         <form class="form-inline" id="item_form" method="post"
+             action="/adminaddfaq/" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+      <table>
+          <tr>
+           
+            <td>
+              <label for="Identifier"><i>Identifier</i> </label>
+            </td>  
+            <td> 
+                <input type="text" name="identifier" id="identifier" class="form-control">
+            </td>    
+            </tr>
+            <tr>
+                <td>
                     <label for="question">Question:</label>
+                </td>
+                <td>
                     <textarea name="question" cols="40" rows="5" class="form-control" required="" id="id_question"></textarea>
-
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <label for="answer">Answer:</label>
-                    <textarea name="answer" cols="40" rows="5" class="form-control" required="" id="id_question"></textarea> </br>
-                
-                
-                
-                
                     
-                 
-                
-                <button type="button" class="btn btn-primary">Save</button> 
-                </div></br>               
-                 
-            </form>
-        </div>
+                </td>
+                <td>
+                    <textarea name="answer" cols="40" rows="5" class="form-control" required="" id="id_question"></textarea> </br>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                  <button class="btn btn-info mb-2 waves-effect waves-light">Save <i class="fas fa-send ml-1"></i></button>
+                    
+                </td>
+            </tr>
+        </table>
+        </form>
+
     </div>
+    </div>                
+                
+                
 {% endblock %}

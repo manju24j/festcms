@@ -112,7 +112,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     # profile informations:
-    institute_name = models.ForeignKey(College,on_delete=models.CASCADE)
+    institute_name = models.CharField(max_length=255)
     degree_name = models.CharField(max_length=255)
     major_subject_name = models.CharField(max_length=255)
 

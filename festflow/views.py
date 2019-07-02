@@ -110,8 +110,8 @@ def organizer(request):
 
 def collegelist(request):
     context = {}
-    all_contacts = College.objects.all()
-    context['all_contacts'] = all_contacts
+    all_colleges = College.objects.all()
+    context['all_colleges'] = all_colleges
     return render(request, 'festflow/college.html', context)
 
 
@@ -253,14 +253,16 @@ def adminaddevent(request):
     context = {}
     context['content'] = Event.objects.all()
     if request.method == 'POST':
-        identifier = request.POST['identifier']
         name = request.POST['name']
-
+        identifier = request.POST['identifier']
         description = request.POST['description']
-        logo = request.POST['logo']
+        if 'picture' in request.FILES:
+            picture = request.FILES['picture']
         venue = request.POST['venue']
+        fee = request.POST['fee']
+        date_time = request.POST['date']
 
-        c=About(identifier=identifier,content=content)
+        c=Event(identifier=identifier,name=name,description=description,logo=picture,venue=venue,fee=fee,date_time=date_time)
         c.save()
         all_events = Event.objects.all()
         context['all_events'] = all_events
@@ -284,7 +286,7 @@ def admincollege_list(request):
 
 def adminfaq(request):
     context = {}
-    context['content'] = About.objects.all()
+    context['faqs'] = FAQ.objects.all()
     return render(request, 'adminflow/faq.html', context)
 
 def adminresult(request):
@@ -293,41 +295,79 @@ def adminresult(request):
     return render(request, 'adminflow/result.html', context)
 
 
-
-# def addabout(request):
-#     context = {}
-#     context['content'] = About.objects.all()
-#     return render(request, 'adminflow/addabout.html', context)
-
 def adminaddorganizer(request):
     context = {}
-    context['content'] = About.objects.all()
-    return render(request, 'adminflow/addorganizer.html', context)
+    all_contacts = organizerMember.objects.all()
+    context['all_contacts'] = all_contacts
+    if request.method == 'POST':
+        name = request.POST['name']
+        position = request.POST['position']
+        contactNumber = request.POST['contactnumber']
+        emailId = request.POST['emailid']
 
-# def addevent(request):
-#     context = {}
-#     context['content'] = About.objects.all()
-#     return render(request, 'adminflow/addevent.html', context)
+        c=organizerMember(name=name,position=position,contactNumber=contactNumber,emailId=emailId)
+        c.save()
+        all_contacts = organizerMember.objects.all()
+        context['all_contacts'] = all_contacts
+        return render(request, 'festflow/contact.html', context)
+    else:
+        all_contacts = organizerMember.objects.all()
+        context['all_contacts'] = all_contacts
+        return render(request, 'festflow/addorganizer.html', context)
 
 
-def adminaddsponsours(request):
+def adminaddsponsors(request):
     context = {}
-    context['content'] = About.objects.all()
-    return render(request, 'adminflow/addsponsours.html', context)
+    all_sponsors = Sponsor.objects.all()
+    context['all_sponsors'] = all_sponsors
+    if request.method == 'POST':
+        name = request.POST['name']
+        if 'picture' in request.FILES:
+            picture = request.FILES['picture']
+
+        s=Sponsor(name=name,logo=picture)
+        s.save()
+        all_sponsors = Sponsor.objects.all()
+        context['all_sponsors'] = all_sponsors
+        return render(request, 'festflow/sponsors.html', context)
+    else:
+        all_sponsors = Sponsor.objects.all()
+        context['all_sponsors'] = all_sponsors
+        return render(request, 'festflow/addsponsors.html', context)
+    
 
 def adminaddfaq(request):
     context = {}
-    context['content'] = About.objects.all()
-    return render(request, 'adminflow/addfaq.html', context)
+    context['faqs'] = FAQ.objects.all()
+    if request.method == 'POST':
+        identifier = request.POST['identifier']
+        question = request.POST['question']
+        answer = request.POST['answer']
+        c=FAQ(identifier=identifier,question=question,answer=answer)
+        c.save()
+        context['faqs'] = FAQ.objects.all()
+        return render(request, 'festflow/faq.html', context)
+    else:
+        context['faqs'] = FAQ.objects.all()
+        return render(request, 'festflow/addfaq.html', context)
+
 
 def adminaddcollegelist(request):
     context = {}
-    context['content'] = About.objects.all()
-    return render(request, 'adminflow/addcollegelist.html', context)
-
-
-
-
+    context['content'] = College.objects.all()
+    if request.method == 'POST':
+        name = request.POST['name']
+        address = request.POST['address']
+        c=College(name=name,address=address)
+        c.save()
+        all_colleges = College.objects.all()
+        context['all_colleges'] = all_colleges
+        return render(request, 'festflow/college.html', context)
+    else:
+        all_colleges = Event.objects.all()
+        context['all_colleges'] = all_colleges
+        return render(request, 'festflow/addcollegelist.html', context)
+    
 
 def volunteer_home(request):
     context = {}

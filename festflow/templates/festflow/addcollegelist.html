@@ -1,4 +1,4 @@
-{% extends "adminflow/base.html" %}
+{% extends "festflow/base.html" %}
 {% load static %}
 
 
@@ -9,7 +9,7 @@
         <h3>ADD College List </h3>
         
          <form class="form-item span8" id="item_form" method="post"
-             action="/admin/add_college/" enctype="multipart/form-data">
+             action="/adminaddcollegelist/" enctype="multipart/form-data">
             {% csrf_token %}          
             
             <table>
@@ -18,27 +18,27 @@
                     <label for="colname">College Name:</label>
                     </td>
                     <td>
-                    <input type="colname" class="form-control" id="colname">    
+                    <input type="colname" name="name" required="" class="form-control" id="colname">    
                     </td>
                 </tr>
                 <tr>
                     <td>
-                    <label for="palce">Place:</label>                        
+                    <label for="palce">address:</label>                        
                     </td>
                     <td>
-                    <input type="text" class="form-control" id="palce">
+                    <input type="text" class="form-control" name="address" required="" id="palce">
                         
                     </td>
                 </tr>
-                <tr>
-                    <td>
-                        
-                    </td>
-                    <td>
-                        
-                    <button type="button" class="btn btn-primary">Save</button> 
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    
+                </td>
+                <td>
+                  <button class="btn btn-info mb-2 waves-effect waves-light">Save <i class="fas fa-send ml-1"></i></button>
+                    
+                </td>
+            </tr>
             </table>
                  
             </form>

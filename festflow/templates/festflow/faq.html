@@ -16,7 +16,14 @@
     <div class="jumbotron">
         <h1 id='link'>  Frequently Asked Questions </h1>
         <div class="dash">
-         <a href="/adminaddfaq" class="btn btn-info" role="button">Add FAQ + </a>
+              {% if user.is_authenticated %}
+               {% if user.username == 'admin' %}
+                    <h4>
+                         <a href="/adminaddfaq" class="btn btn-info" role="button">Add FAQ + </a>
+                    </h4>
+               {% endif %}
+              {% endif %}
+        
 
         </div>
         <br />

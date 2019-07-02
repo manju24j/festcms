@@ -14,9 +14,16 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h2 id='link'>Events 
-            <a href="/adminaddevent" class="btn btn-info" role="button">Add event + </a>
-</h2>
+        <h2 id='link'>Events </h2>
+              {% if user.is_authenticated %}
+               {% if user.username == 'admin' %}
+                    <h4>
+                        <a href="/adminaddevent" class="btn btn-info" role="button">Add event + </a>
+                    </h4>
+               {% endif %}
+              {% endif %}
+
+
 
         <div class="dash"></div>
         <br />
