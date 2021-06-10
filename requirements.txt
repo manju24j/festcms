@@ -1,7 +1,7 @@
 coala-bears==0.10
 coverage==4.3.4
 defusedxml==0.5.0
-Django==2.0.2
+Django==2.2.24
 django-email-extras==0.3.3
 https://github.com/stephenmcd/django-forms-builder/archive/master.zip
 django-js-asset==1.0.0
